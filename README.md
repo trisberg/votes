@@ -1,6 +1,15 @@
-# Demo of vote counting using riff
+# Spring One 2017 demo of vote counting using riff
 
 This demo consists of three functions and a UI to collect votes and display the results.
+
+![votes demo image](s1p-demo-votes.png "Votes Demo")
+
+The vote bubbles on the top of the UI page collects votes and posts them via the HTTP gateway to the _votes_ topic.
+The votes are processed by the `vote-counter` function and written to Redis.
+The `vote-stream-processor` also reads the _votes_ topic and processes the stream of votes with two windowing operations.
+One window for counts every two seconds and one for counts every 60 seconds.
+The results are written to a _function-replicas_ topic read by the `redis-writer` function which writes the results to Redis.
+The UI then collects the windowing results and shows it at the bottom of the page.
 
 ## Running the Demo on Minikube
 
