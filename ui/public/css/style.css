@@ -1,0 +1,92 @@
+body {
+  font-family: monospace;
+  margin: 0;
+}
+
+div.center {
+  margin:0 auto;
+  width:150vh;
+  max-width:100%;
+}
+
+.vote-button {
+  cursor: pointer; 
+  stroke-width: 2px;
+  stroke: #fff;
+}
+.vote-button:hover {
+   stroke: #ffc;
+}
+  
+.votes text {
+  cursor: pointer; 
+  font-size: 12px;
+  text-anchor: middle;
+  fill: #fff;
+  transition: font-size 500ms;
+}
+
+.votes text:hover, .vote-button:hover + text {
+  font-size:18px;
+}
+
+svg.functions {
+  background-color: #bbb;
+}
+
+.functions g {
+  cursor: pointer;
+}
+
+.functions rect.bg {
+  fill: #bbb;
+}
+
+.functions rect.led {
+  stroke: #353;
+  stroke-width: 0.3;
+  transition: 500ms;
+}
+
+.functions rect.led.on {
+  fill: #0f0;
+}
+
+.functions rect.led.red {
+  fill: #f00;
+}
+
+.functions rect.led.off {
+  fill: #353;
+}
+
+.functions text.scale {
+  font-family: inherit;
+  font-size:8px;
+}
+
+.functions text {
+  font-size: 10px;
+  fill: #fff;
+}
+.log text.topval, .log text.topwindow {
+  font-size: 8px;
+  fill: #ccc;
+}
+.log path {
+  stroke-width: 0;
+  fill: #eee;
+}
+
+.log path.boot {
+  fill: #6db33f1f;
+}
+.log path.framework {
+  fill: #0e9fda1f;
+}
+.log path.reactor {
+  fill: #ea99991f;
+}
+.log path.riff {
+  fill: #f6b26b1f;
+}
